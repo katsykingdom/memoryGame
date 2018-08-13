@@ -1,3 +1,5 @@
+//Declaring variables
+
 let deck = document.querySelector('ul.deck');
 let cards = document.getElementsByClassName('card');
 let openCards = [];
@@ -15,20 +17,11 @@ let closeicon = document.querySelector(".close");
 document.body.onload = startGame();
 
 function startGame(){
-    // shuffle deck
     shuffle(deck);
-    //reset timer
-    var timer = document.querySelector(".timer");
-    timer.innerHTML = "0 mins 0 secs";
     clearInterval(interval);
 }
 
-
-/*
- * Suffle cards
- */
-
-//Shuffle function from: https://jsfiddle.net/qEM8B/
+//Shuffle cards, function from: https://jsfiddle.net/qEM8B/
 
 function shuffle(){
     for (var i = deck.children.length; i >= 0; i--) {
@@ -36,8 +29,7 @@ function shuffle(){
     }
 }
 
-
-// Showing cards on clikc
+// Showing cards on click, cheking if it's a match, counting moves, updating star rating
 
 deck.addEventListener('click', event => {
     const clickedCard = event.target;
@@ -61,7 +53,7 @@ function openSet(clickedCard) {
 }
 
 
-// Checking if open cards match
+// Checking if open cards match function
 
 function isItaMatch() {
     if (openCards[0].firstElementChild.className === openCards[1].firstElementChild.className){
@@ -80,10 +72,7 @@ function isItaMatch() {
     }
 }
 
-// disable matched cards
-
-
-// Move counter
+// Move counter function
 
 function moveCounting() {
     movesCount++;
@@ -98,7 +87,7 @@ function moveCounting() {
     }
 }
 
-//Timer 
+// Timer function
 
 function clock(){
     interval = setInterval(function(){
@@ -115,6 +104,7 @@ function clock(){
     },1000);
 }
 
+// Star rating function
 
 function checkScore() {
     const stars = document.querySelectorAll('.stars li');
@@ -129,6 +119,7 @@ function checkScore() {
     }
 
 // Congratulations modal
+
 function congratulations(){
     console.log(matchedCards);
     if (matchedCards === 16){
@@ -136,26 +127,18 @@ function congratulations(){
         clearInterval(interval);
         finalTime = timer.innerHTML;
 
-        // show congratulations modal
+        // Display congratulations overlay
         modal.style.display="block";
 
-        // declare star rating variable
+        // Display moves, star rating and time
         let starRating = document.querySelector(".stars").innerHTML;
-
-        //showing move, rating, time on modal
         document.getElementById("finalMove").innerHTML = movesCount;
         document.getElementById("starRating").innerHTML = starRating;
         document.getElementById("totalTime").innerHTML = finalTime;
 
-        //closeicon on modal
-        closeModal();
+        // Closing the modal
+        closeicon.addEventListener("click", function(e){
+            modal.style.display="none";
+        });
     };
-}
-
-
-// Close congrats modal
-function closeModal(){
-    closeicon.addEventListener("click", function(e){
-        modal.style.display="none";
-    });
 }
