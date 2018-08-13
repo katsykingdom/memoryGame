@@ -11,14 +11,14 @@
 <body>
     <!-- Congratulations Modal -->
     <div id="congratsModal" class="overlay">
-            <div class="popup">
+            <div id="modalContent">
                 <a class="close" href=# >×</a>
                 <h2>Congratulations!</h2>
                 <div class="content">
                     <p>You finished the game with <span id=finalMove> </span> moves in <span id=totalTime> </span> </p>
                     <p>Rating:  <span id=starRating></span></p>
                 </div>
-                <button id="play-again" onclick="location.reload();">
+                <button id="replay" onclick="location.reload();">
                     <a>Play again</a>
                 </button>
             </div>

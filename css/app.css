@@ -144,7 +144,7 @@ h1 {
 	opacity: 1;
 }
   
-.popup {
+#modalContent {
 	margin: 100px auto;
 	padding: 40px;
 	background: #ffffff;
@@ -154,7 +154,7 @@ h1 {
 	transition: all 5s ease-in-out;
 }
   
-.popup .close {
+#modalContent .close {
 	position: absolute;
 	top: 20px;
 	right: 30px;
@@ -165,7 +165,7 @@ h1 {
 	color: #333;
 }
 
-.popup .content{
+#modalContent .content{
 	overflow: auto;
 	text-align: center;
 }
@@ -174,7 +174,7 @@ h1 {
 	display: inline-block;
 }
 
-#play-again {
+#replay {
 	background-color: #02ccba;
 	padding: 15px 10px;
 	font-size: 18px;
