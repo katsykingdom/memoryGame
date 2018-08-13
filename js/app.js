@@ -118,18 +118,15 @@ function clock(){
 
 function checkScore() {
     const stars = document.querySelectorAll('.stars li');
-    if (movesCount === 24) {
+    if (movesCount === 26) {
         for (star of stars) {
             stars[0].innerHTML = '<i class="far fa-star"></i>';
-        }} else if (movesCount === 32) {
+        }} else if (movesCount === 34) {
             for (star of stars) {
                stars[1].innerHTML = '<i class="far fa-star"></i>'; 
             }
         }
     }
-
-
-// Congratulations modal
 
 // Congratulations modal
 function congratulations(){
@@ -156,7 +153,7 @@ function congratulations(){
 }
 
 
-// close congrats modal
+// Close congrats modal
 function closeModal(){
     closeicon.addEventListener("click", function(e){
         modal.style.display="none";
