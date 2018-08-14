@@ -18,7 +18,7 @@ let timerIsRunning = false;
 document.body.onload = startGame();
 
 function startGame(){
-    shuffle(d eck);
+    shuffle(deck);
     clearInterval(interval);
 }
 
