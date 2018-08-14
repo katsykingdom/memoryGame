@@ -10,6 +10,7 @@ let interval;
 let matchedCards = 0;
 let modal = document.getElementById("congratsModal")
 let closeicon = document.querySelector(".close");
+let timerIsRunning = false;
 
 
 // Starting the game
@@ -90,28 +91,31 @@ function moveCounting() {
 // Timer function
 
 function clock(){
-    interval = setInterval(function(){
-        timer.innerHTML = minute+" mins "+second+" secs";
-        second++;
-        if(second == 60){
-            minute++;
-            second = 0;
-        }
-        if(minute == 60){
-            hour++;
-            minute = 0;
-        }
-    },1000);
+    if (!timerIsRunning){
+            timerIsRunning = true;
+            interval = setInterval(function(){
+            timer.innerHTML = minute+" mins "+second+" secs";
+            second++;
+            if(second == 60){
+                minute++;
+                second = 0;
+            }
+            if(minute == 60){
+                hour++;
+                minute = 0;
+            }
+        },1000);
+    }
 }
 
 // Star rating function
 
 function checkScore() {
     const stars = document.querySelectorAll('.stars li');
-    if (movesCount === 18) {
+    if (movesCount === 10) {
         for (star of stars) {
                 stars[0].innerHTML = '<i class="far fa-star"></i>';
-        }} else if (movesCount === 24) {
+        }} else if (movesCount === 16) {
             for (star of stars) {
                stars[1].innerHTML = '<i class="far fa-star"></i>'; 
             }
