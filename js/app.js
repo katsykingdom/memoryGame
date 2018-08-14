@@ -18,7 +18,7 @@ let timerIsRunning = false;
 document.body.onload = startGame();
 
 function startGame(){
-    shuffle(deck);
+    shuffle(d eck);
     clearInterval(interval);
 }
 
@@ -127,7 +127,6 @@ function checkScore() {
 function congratulations(){
     console.log(matchedCards);
     if (matchedCards === 16){
-        console.log(matchedCards);
         clearInterval(interval);
         finalTime = timer.innerHTML;
 
