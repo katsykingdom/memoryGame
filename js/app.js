@@ -24,7 +24,7 @@ function startGame(){
 //Shuffle cards, function from: https://jsfiddle.net/qEM8B/
 
 function shuffle(){
-    for (var i = deck.children.length; i >= 0; i--) {
+    for (let i = deck.children.length; i >= 0; i--) {
     deck.appendChild(deck.children[Math.random() * i | 0]);
     }
 }
@@ -33,8 +33,8 @@ function shuffle(){
 
 deck.addEventListener('click', event => {
     const clickedCard = event.target;
-    moveCounting();
     checkScore();
+    clock();
     if (clickedCard.classList.contains('card') && openCards.length < 2) {
         showCard(clickedCard);
         openSet(clickedCard);
@@ -46,6 +46,7 @@ deck.addEventListener('click', event => {
 
 function showCard(clickedCard){
     clickedCard.classList.add('open', 'show');
+    clickedCard.style.pointerEvents = "none";
 }
 
 function openSet(clickedCard) {
@@ -56,6 +57,7 @@ function openSet(clickedCard) {
 // Checking if open cards match function
 
 function isItaMatch() {
+    moveCounting();
     if (openCards[0].firstElementChild.className === openCards[1].firstElementChild.className){
         openCards[0].classList.add('match');
         openCards[1].classList.add('match');
@@ -67,6 +69,8 @@ function isItaMatch() {
         setTimeout(() => {
         openCards[0].classList.remove('open', 'show');
         openCards[1].classList.remove('open', 'show');
+        openCards[0].style.pointerEvents = "auto";
+        openCards[1].style.pointerEvents = "auto";
         openCards = [];
         }, 1200);
     }
@@ -75,17 +79,13 @@ function isItaMatch() {
 // Move counter function
 
 function moveCounting() {
-    movesCount++;
-    const movesCountText = document.querySelector('.moves');
-    movesCountText.innerHTML = movesCount;
-    
-    if(movesCount == 1){
-        second = 0;
-        minute = 0; 
-        hour = 0;
-        clock();
+    if (openCards.length === 2) {
+        movesCount++;
+        const movesCountText = document.querySelector('.moves');
+        movesCountText.innerHTML = movesCount;
     }
 }
+
 
 // Timer function
 
@@ -108,10 +108,10 @@ function clock(){
 
 function checkScore() {
     const stars = document.querySelectorAll('.stars li');
-    if (movesCount === 26) {
+    if (movesCount === 18) {
         for (star of stars) {
-            stars[0].innerHTML = '<i class="far fa-star"></i>';
-        }} else if (movesCount === 34) {
+                stars[0].innerHTML = '<i class="far fa-star"></i>';
+        }} else if (movesCount === 24) {
             for (star of stars) {
                stars[1].innerHTML = '<i class="far fa-star"></i>'; 
             }
