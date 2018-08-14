@@ -3,7 +3,7 @@
 ## Table of Contents
 * [Demo](#demo)
 * [Instructions](#instructions)
-* [Disclaimer](#disclaimer)
+* [Credits](#credits)
 
 ## Demo
 http://www.teszter.com/memorygame/
