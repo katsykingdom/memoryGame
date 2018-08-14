@@ -20,7 +20,7 @@ If the cards match, both cards stay flipped over.
 If the cards do not match, both cards are flipped face down.
 The game ends once all cards have been correctly matched.
 
-## Disclaimer
+## Credits
 
 This project is part of Udacity's Front-end web developer Nanodegree program:
 https://eu.udacity.com/course/front-end-web-developer-nanodegree--nd001
