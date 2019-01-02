@@ -6,7 +6,7 @@
 * [Credits](#credits)
 
 ## Demo
-http://www.teszter.com/ArcadeGame
+[Demo](http://www.teszter.com/ArcadeGame)
 
 ## Instructions
 
