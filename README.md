@@ -6,19 +6,16 @@
 * [Credits](#credits)
 
 ## Demo
-http://www.teszter.com/memorygame/
+http://www.teszter.com/ArcadeGame
 
 ## Instructions
 
-The game board consists of sixteen "cards" arranged in a grid. The deck is made up of eight different pairs of cards, each with different symbols on one side. The cards are arranged randomly on the grid with the symbol face down. The gameplay rules are very simple: flip over two hidden cards at a time to locate the ones that match!
+In this game you have a Player and Enemies (bugs). The goal of the player is to reach the water, without colliding into any one of the enemies.
 
-Each turn:
-
-The player flips one card over to reveal its underlying symbol.
-The player then turns over a second card, trying to find the corresponding card with the same symbol.
-If the cards match, both cards stay flipped over.
-If the cards do not match, both cards are flipped face down.
-The game ends once all cards have been correctly matched.
+The player can move left, right, up and down
+The enemies move at varying speeds on the paved block portion of the game board
+Once a the player collides with an enemy, the game is reset and the player moves back to the starting square
+Once the player reaches the water (i.e., the top of the game board), the game is won
 
 ## Credits
 
@@ -26,5 +23,5 @@ This project is part of Udacity's Front-end web developer Nanodegree program:
 https://eu.udacity.com/course/front-end-web-developer-nanodegree--nd001
 
 This repository is based on the starter code for Udacity students:
-https://github.com/udacity/fend-project-memory-game
+https://github.com/udacity/frontend-nanodegree-arcade-game
 
